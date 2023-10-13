@@ -4,29 +4,9 @@ import { Task } from '../typings/task';
 
 let tasks: Task[] = [
   {
-    id: '1',
-    text: 'Fazer compras',
-    done: true,
-  },
-  {
     id: uuidv4(),
     text: 'Estudar',
-    done: false,
-  },
-  {
-    id: uuidv4(),
-    text: 'Ir ao cinema',
-    done: false,
-  },
-  {
-    id: uuidv4(),
-    text: 'Jogar videogame',
-    done: false,
-  },
-  {
-    id: uuidv4(),
-    text: 'Ler livros',
-    done: false,
+    done: true,
   },
 ];
 
