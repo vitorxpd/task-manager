@@ -1,10 +1,10 @@
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'node:crypto';
 
 import { Task } from '../typings/task';
 
 let tasks: Task[] = [
   {
-    id: uuidv4(),
+    id: randomUUID(),
     text: 'Estudar',
     done: true,
   },
@@ -23,7 +23,7 @@ class TaskRepository {
 
   create(text: string) {
     const newTask: Task = {
-      id: uuidv4(),
+      id: randomUUID(),
       text,
       done: false,
     };
