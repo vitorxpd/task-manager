@@ -1,23 +1,36 @@
-const tasks = [
+import { v4 as uuidv4 } from 'uuid';
+
+interface Task {
+  id: string;
+  text: string;
+  done: boolean;
+}
+
+let tasks: Task[] = [
   {
     id: '1',
     text: 'Fazer compras',
+    done: true,
   },
   {
-    id: '2',
+    id: uuidv4(),
     text: 'Estudar',
+    done: false,
   },
   {
-    id: '3',
+    id: uuidv4(),
     text: 'Ir ao cinema',
+    done: false,
   },
   {
-    id: '4',
+    id: uuidv4(),
     text: 'Jogar videogame',
+    done: false,
   },
   {
-    id: '5',
+    id: uuidv4(),
     text: 'Ler livros',
+    done: false,
   },
 ];
 
@@ -30,6 +43,33 @@ class TaskRepository {
     const item = tasks.find((task) => task.id === id);
 
     return item;
+  }
+
+  create(text: string) {
+    const newTask: Task = {
+      id: uuidv4(),
+      text,
+      done: false,
+    };
+
+    tasks.push(newTask);
+
+    return newTask;
+  }
+
+  update(id: string, done: boolean) {
+    const currentTask = tasks.find((task) => task.id === id);
+    currentTask!.done = done;
+
+    return currentTask;
+  }
+
+  delete(id: string) {
+    const newTasks = tasks.filter((task) => task.id !== id);
+
+    tasks = newTasks;
+
+    return;
   }
 }
 
