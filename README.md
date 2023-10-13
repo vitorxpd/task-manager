@@ -2,9 +2,7 @@
 
 The Task Manager API is a versatile tool for efficiently managing your task list. It offers a range of essential features to help you keep your tasks organized and up-to-date.
 
-## Task List
-
-This API provides endpoints for managing tasks in a task list.
+## Endpoints
 
 - **GET /tasks**
   - List all tasks.
