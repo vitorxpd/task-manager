@@ -1,10 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-interface Task {
-  id: string;
-  text: string;
-  done: boolean;
-}
+import { Task } from '../typings/task';
 
 let tasks: Task[] = [
   {
